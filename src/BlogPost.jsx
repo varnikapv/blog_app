@@ -1,34 +1,51 @@
 function BlogPost(props) {
     return (
-        <div style={{
-            border: '1px solid #ddd',
-            borderRadius: '10px',
-            padding: '15px',
-            marginBottom: '20px',
-            boxShadow: '2px 2px 10px rgba(0, 0, 0, 0.05)'
+      <div style={{
+        backgroundColor: 'white',
+        padding: '20px',
+        borderRadius: '10px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        marginBottom: '20px',
+        transition: 'transform 0.2s',
+      }}>
+        <h2 style={{ 
+          marginBottom: '10px', 
+          color: '#333', 
+          fontSize: '22px' 
         }}>
-
-            <h2>{props.title}</h2>
-            <p>{props.content}</p>
-
-            <button
-                    onClick={props.onDelete}
-                    style={{
-                        marginTop: '10px',
-                        backgroundColor: '#ff4d4d',
-                        color: 'white',
-                        border: 'none',
-                        padding: '8px 16px',
-                        borderRadius: '5px',
-                        fontWeight: 'bold',
-                        cursor: 'pointer',
-                        display: 'block'
-                    }}
-                    >
-                       Delete 
-                    </button>
-        </div>
+          {props.title}
+        </h2>
+  
+        <p style={{ 
+          marginBottom: '20px', 
+          color: '#666', 
+          fontSize: '16px', 
+          lineHeight: '1.5' 
+        }}>
+          {props.content}
+        </p>
+  
+        <button 
+          onClick={props.onDelete}
+          style={{
+            backgroundColor: '#ff4d4d',
+            color: 'white',
+            border: 'none',
+            padding: '10px 20px',
+            borderRadius: '5px',
+            fontWeight: 'bold',
+            cursor: 'pointer',
+            marginTop: '10px',
+            transition: 'background-color 0.3s'
+          }}
+          onMouseOver={(e) => e.target.style.backgroundColor = '#ff1a1a'}
+          onMouseOut={(e) => e.target.style.backgroundColor = '#ff4d4d'}
+        >
+          Delete
+        </button>
+      </div>
     )
-}
-
-export default BlogPost
+  }
+  
+  export default BlogPost
+  

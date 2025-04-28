@@ -51,8 +51,25 @@ function Blog() {
   } 
 
   return (
-    <div style={{ maxWidth: '600px', margin: '50px auto' }}>
-      <h1>Mini Blog 📝</h1>
+    <div style={{ 
+      fontFamily: "'Poppins', sans-serif",
+      maxWidth: '900px',   // <-- made bigger
+      margin: '50px auto',
+      padding: '40px',     // <-- more padding
+      backgroundColor: 'white',
+      borderRadius: '12px',
+      boxShadow: '0 8px 24px rgba(0, 0, 0, 0.1)',
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+    }}>
+      <h1  style={{ 
+        textAlign: 'center', 
+        marginBottom: '30px', 
+        color: '#333',
+        fontSize: '40px'
+       }}>
+      MINI BLOG 📝</h1>
       
       <form onSubmit={handleAddPost} style={{ marginBottom: '30px' }}>
         <input 
@@ -78,7 +95,10 @@ function Blog() {
           color: 'white',
           border: 'none',
           borderRadius: '5px',
-          cursor: 'pointer'
+          cursor: 'pointer',
+          fontWeight: 'bold',
+          width: '100%',
+          transition: 'background-color 0.3s'
         }}>Add Post</button>
       </form>
 
