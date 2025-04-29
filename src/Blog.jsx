@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import BlogPost from './BlogPost'
+import { toast } from 'react-hot-toast'
+
 
 function Blog() {
   const [posts, setPosts] = useState([])
@@ -39,15 +41,38 @@ function Blog() {
     }
 
     setPosts([newPost, ...posts])
+    toast('Post added successfully!', {
+      icon: '📝',
+      style: {
+        borderRadius: '10px',
+        background: '#4CAF50',
+        color: '#fff',
+        fontWeight: '600',
+      },
+    })
+    
+
 
     // clear input fields
     setTitle('')
     setContent('')
   }
+  
 
   function handleDeletePost(id) {
     const updatedPosts = posts.filter(post => post.id !== id)
     setPosts(updatedPosts)
+    toast('Post deleted!', {
+      icon: '🗑️',
+      style: {
+        borderRadius: '10px',
+        background: '#f44336',
+        color: '#fff',
+        fontWeight: '600',
+      },
+    })
+    
+
   } 
 
   return (

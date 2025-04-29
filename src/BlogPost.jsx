@@ -1,13 +1,24 @@
 function BlogPost(props) {
     return (
       <div style={{
-        backgroundColor: 'white',
+        border: '1px solid #eee',
+        borderRadius: '12px',
         padding: '20px',
-        borderRadius: '10px',
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
         marginBottom: '20px',
-        transition: 'transform 0.2s',
-      }}>
+        backgroundColor: '#fafafa',
+        boxShadow: '0 4px 10px rgba(0,0,0,0.05)',
+        transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+        fontFamily: "'Poppins', sans-serif"
+      }}
+      onMouseOver={(e) => {
+        e.currentTarget.style.transform = 'scale(1.02)'
+        e.currentTarget.style.boxShadow = '0 8px 20px rgba(0,0,0,0.1)'
+      }}
+      onMouseOut={(e) => {
+        e.currentTarget.style.transform = 'scale(1)'
+        e.currentTarget.style.boxShadow = '0 4px 10px rgba(0,0,0,0.05)'
+      }}
+      >
         <h2 style={{ 
           marginBottom: '10px', 
           color: '#333', 

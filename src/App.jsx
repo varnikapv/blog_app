@@ -1,3 +1,4 @@
+import { Toaster } from 'react-hot-toast'
 import Blog from './Blog'
 
 function App() {
@@ -8,12 +9,12 @@ function App() {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      padding: '20px'
+      padding: '40px'
     }}>
       <Blog />
+      <Toaster position="bottom-center" />
     </div>
   )
 }
 
 export default App
-
